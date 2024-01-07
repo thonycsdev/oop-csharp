@@ -37,8 +37,21 @@ var pizza = PizzaBuilder
 .AddDough()
 .AddSauce("Ketchup")
 .AddTopping("Calabria")
+.AddTopping("Queijo")
 .Build();
 
 
-Console.WriteLine(pizza.ToString());
+Console.WriteLine(pizza.Describe());
 
+
+var esfirra = EsfirraBuilder
+.Configure()
+.AddDough()
+.AddSauce("Mostarda")
+.AddSauce("Ketchup")
+.AddSauce("Water")
+.AddTopping("Carne Moida")
+.Build()
+.Describe();
+
+Console.WriteLine(esfirra);
