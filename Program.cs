@@ -1,4 +1,5 @@
-﻿using Classes;
+﻿using Builder;
+using Classes;
 using RefactoringGuru;
 // var year = 2024;
 // var month = 1;
@@ -27,6 +28,17 @@ using RefactoringGuru;
 
 
 
-var dog = new Dog("Jhin", "Beagle", 20);
+// var dog = new Dog("Jhin", "Beagle", 20);
 
-dog.Describe();
+// dog.Describe();
+
+var pizza = PizzaBuilder
+.Configure()
+.AddDough()
+.AddSauce("Ketchup")
+.AddTopping("Calabria")
+.Build();
+
+
+Console.WriteLine(pizza.ToString());
+
