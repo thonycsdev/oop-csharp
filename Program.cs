@@ -1,4 +1,5 @@
-﻿using Builder;
+﻿using Abstract;
+using Builder;
 using Classes;
 using RefactoringGuru;
 // var year = 2024;
@@ -55,3 +56,13 @@ var esfirra = EsfirraBuilder
 .Describe();
 
 Console.WriteLine(esfirra);
+
+
+
+
+IDatabaseBuilder postgresSqlBuilder = new PostgresDatabaseBuilder();
+
+Director.Build(postgresSqlBuilder);
+Database pgsql = postgresSqlBuilder.Database;
+pgsql.Connection.Open();
+pgsql.Connection.Close();
